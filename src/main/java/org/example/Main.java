@@ -1,22 +1,29 @@
 package org.example;
 
-class Store <T> {
-    private T item;
-    public T getItem() {
-        return item;
+class Hashtable<K, V> {
+    private K key;
+    private V value;
+    public Hashtable(K key, V value) {
+        this.key = key;
+        this.value = value;
     }
-    public void setItem(T item) {
-        this.item = item;
+    @Override
+    public String toString() {
+        return "Hashtable{" +
+                "key=" + key +
+                ", value=" + value +
+                '}';
     }
+
 }
 
 public class Main {
-
     public static void main(String[] args) {
-        Store<String> store = new Store<>();
-        store.setItem("Hallo");
+       Hashtable<Integer, Integer> hashtableInteger = new Hashtable<>(10, 20);
+       Hashtable<Double, String> stringHashtableString = new Hashtable<>(10.1, "");
 
-        String item = store.getItem();
-        System.out.println(item);
+        System.out.println(hashtableInteger);
+        System.out.println(stringHashtableString);
+
     }
 }
